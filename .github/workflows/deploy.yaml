@@ -19,15 +19,17 @@ jobs:
           docker build -t cygnetops/react-test -f ./client/Dockerfile.dev ./client
           docker run -e CI=true cygnetops/react-test npm test
 
-      - name: Auth
+      - name: Set Service Key
         uses: 'google-github-actions/auth@v0'
         with:
           credentials_json: '${{ secrets.GKE_SA_KEY }}'
 
+      - name: Set Project
         uses: google-github-actions/setup-gcloud@v0
         with:
           project_id: skaffold-338920
 
+      - name: Auth
         run: |-
           gcloud --quiet auth configure-docker
 

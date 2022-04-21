@@ -17,7 +17,7 @@ function App() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            Learn React 3 test 6 Federation
+            Learn React 3 test 7 Federation
           </a>
           <Link to="/">Home</Link>
           <Link to="/otherpage">Other Page</Link>

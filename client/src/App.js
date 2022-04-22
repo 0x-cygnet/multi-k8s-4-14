@@ -17,7 +17,7 @@ function App() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            Learn React 3 test 7 Federation
+            Learn React 3 test 8 new Helm Stable
           </a>
           <Link to="/">Home</Link>
           <Link to="/otherpage">Other Page</Link>

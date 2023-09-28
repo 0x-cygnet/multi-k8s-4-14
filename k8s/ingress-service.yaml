@@ -11,11 +11,11 @@ metadata:
 spec:
   tls:
     - hosts:
-        - obscuredbyfuzz.com
-        - www.obscuredbyfuzz.com
-      secretName: obscuredbyfuzz-com
+        - obscuranervosa.com
+        - www.obscuranervosa.com
+      secretName: obscuranervosa-com
   rules:
-    - host: obscuredbyfuzz.com
+    - host: obscuranervosa.com
       http:
         paths:
           - path: /?(.*)
@@ -32,7 +32,7 @@ spec:
                 name: server-cluster-ip-service
                 port:
                   number: 5000
-    - host: www.obscuredbyfuzz.com
+    - host: www.obscuranervosa.com
       http:
         paths:
           - path: /?(.*)

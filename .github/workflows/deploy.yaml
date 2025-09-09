@@ -25,12 +25,12 @@ jobs:
       - name: Set Identity Provider
         uses: "google-github-actions/auth@v2"
         with:
-          workload_identity_provider: "projects/367718748863/locations/global/workloadIdentityPools/github/providers/my-repo"
+          workload_identity_provider: "projects/32953953504/locations/global/workloadIdentityPools/github/providers/my-repo"
 
       - name: Set Project
         uses: google-github-actions/setup-gcloud@v2
         with:
-          project_id: multi-k8s-471519
+          project_id: multi-k8s-autopilot-471618
 
       - name: Auth
         run: |-
@@ -39,9 +39,9 @@ jobs:
       - name: Get Credentials
         uses: google-github-actions/get-gke-credentials@v2
         with:
-          cluster_name: autopilot-cluster-1 # Your actual cluster name
+          cluster_name: multi-k8s # Your actual cluster name
           location: us-central1 # Region, not zone!
-          project_id: multi-k8s-471519
+          project_id: multi-k8s-autopilot-471618
 
       - name: Build
         run: |-

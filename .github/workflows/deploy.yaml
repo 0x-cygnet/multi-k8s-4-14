@@ -10,6 +10,9 @@ env:
 jobs:
   build:
     runs-on: ubuntu-latest
+    permissions:
+      contents: "read"
+      id-token: "write"
     steps:
       - uses: actions/checkout@v3
 
@@ -19,15 +22,15 @@ jobs:
           docker build -t rallycoding/react-test -f ./client/Dockerfile.dev ./client
           docker run -e CI=true rallycoding/react-test npm test
 
-      - name: Set Service Key
+      - name: Set Identity Provider
         uses: "google-github-actions/auth@v0"
         with:
-          credentials_json: "${{ secrets.GKE_SA_KEY }}"
+          workload_identity_provider: "projects/367718748863/locations/global/workloadIdentityPools/github/providers/my-repo"
 
       - name: Set Project
         uses: google-github-actions/setup-gcloud@v0
         with:
-          project_id: multi-338920
+          project_id: multi-k8s-471519
 
       - name: Auth
         run: |-
